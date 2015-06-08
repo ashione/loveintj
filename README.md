@@ -1,3 +1,3 @@
-A website of Loveing
+A website of Loving
 =====================
 ## Main function come soon! 
