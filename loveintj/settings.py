@@ -21,10 +21,11 @@ SECRET_KEY = 'zgfzw))uy!infi1^dws8jyq(4mm7&=7^a2wco-3^lc)%q!0gij'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG =  False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,8 +83,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
+#STATIC_ROOT =os.path.join(os.path.dirname(__file__),'..', 'static').replace('\\','/')
+#STATIC_ROOT='/home/vagrant/loveintj/static'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+#STATIC_URL =os.path.join(os.path.dirname(os.path.abspath(__file__)),'..', 'static/')
+#STATIC_URL = os.path.join(BASE_DIR,'../static/')
 STATIC_URL = '/static/'
+
+STATIC_DIRS = [
+    os.path.join(BASE_DIR,"static"),
+    os.path.join(BASE_DIR,"loveintj/static"),
+    #'/home/vagrant/loveintj/static/',
+    #os.path.join(os.path.dirname(__file__),'static'),
+ ]
+
 TEMPLATE_DIRS={
         os.path.join(BASE_DIR,'templates/'),
 }
+#print STATIC_URL
